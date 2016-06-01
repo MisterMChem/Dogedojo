@@ -30,12 +30,17 @@ function signIn() {
 function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
-	$("#weclomeText").html("Hello, " + user.displayName);
+	$("#welcomeText").html("Hello, " + user.displayName);
 };
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
-    
+    firebase.database().ref('Users/' + user.uid).set({
+    	name: user.displayName,
+    	email: user.email,
+    	favDog: text
+  	});
+
 });
 
 
