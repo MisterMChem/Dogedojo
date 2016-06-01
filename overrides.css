@@ -9,6 +9,7 @@
 }
 
 #inputLabel > input {
-	display: hidden;
+	position: absolute;
+	margin-top: -1000px;
 }
 
