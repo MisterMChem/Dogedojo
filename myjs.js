@@ -48,7 +48,9 @@ function handleFileSelect(event) {
 	var file = event.target.files[0];
 	var metadata = {
 		contentType: 'image',
-		dogType: 'Lab'
+		customMetadata: {
+			dogType: 'Lab'
+		}
 	};
 	var uploadTask = firebase.storage().ref().child('dogImages/' + file.name).put(file, metadata);
 	// Register three observers:
