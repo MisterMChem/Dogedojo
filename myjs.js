@@ -46,7 +46,11 @@ $(".dropdown").on("hide.bs.dropdown", function(event){
 
 function handleFileSelect(event) {
 	var file = event.target.files[0];
-	var uploadTask = firebase.storage().ref().child('dogImages/' + file.name).put(file);
+	var metadata = {
+		contentType: 'image',
+		dogType: 'Lab'
+	};
+	var uploadTask = firebase.storage().ref().child('dogImages/' + file.name).put(file, metadata);
 	// Register three observers:
 	// 1. 'state_changed' observer, called any time the state changes
 	// 2. Error observer, called on failure
