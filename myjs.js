@@ -57,8 +57,8 @@ function confirmUpload() {
 		customMetadata: {
 			'dogType': 'Lab',
 			'uploadedBy': user.uid,
-			'title': $("#imgTitle").html(),
-			'caption': $("#imgDesc").html()
+			'title': $("#imgTitle").val(),
+			'caption': $("#imgDesc").val()
 		},
 	};
 	var uploadTask = firebase.storage().ref().child('dogImages/' + selectedFile.name).put(selectedFile, metadata);
