@@ -32,58 +32,15 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">Your Doges</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="#">Your Doges</a></li>
           <li><a href="timeline.html">Public Doges</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
 
-  <div class="container" id="login">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <img src="doge.jpg" class="mainDoge">
-        <h2>Welcome to DogeDojo</h2>
-        <button type="button" class="btn btn-primary" onclick="signIn();"><i class="fa fa-google-plus"></i> Sign-In With Google</button>
-
-      </div>
-    </div>
-   
-
-  </div><!-- /.container -->
-
-  <div class="container" id="welcome">
-    <div class="row">
-      <div class="col-lg-6">
-        <h2 id="welcomeText"></h2>
-        <img src="doge.jpg" class="mainDoge">
-      </div>
-      <div class="col-lg-6" id="uploadDiv">
-        <h2>Your favorite doge:</h2> <div class="dropdown favoriteDoge">
-          <button class="btn btn-primary dropdown-toggle" id="dogDrop" type="button" data-toggle="dropdown">Floof
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Lab</a></li>
-            <li><a href="#">Terrier</a></li>
-            <li><a href="#">Floof</a></li>
-          </ul>
-        </div>
-        <h2>Upload Doge</h2>
-          <label class="myLabel" id="inputLabel">
-            <input type="file" id="upload" required/>
-            <span>Select File</span>
-          </label>
-          <div class="input-group upload-group">
-          <input type="text" placeholder="Image Title" id="imgTitle">
-          </div>
-          <div class="input-group upload-group">
-          <input type="text" placeholder="Image Caption" id="imgDesc">
-          </div>
-          <button type="button" class="btn btn-primary upload-group" onclick="confirmUpload()">SUBMIT</button>
-      </div>
-    </div>
-  </div>
+  
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script>    
     // Initialize Firebase
@@ -103,7 +60,8 @@
   <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="myjs.js"></script>
+  <script type="text/javascript" src="timeline.js"></script>
+
 
 </body>
 </html>
