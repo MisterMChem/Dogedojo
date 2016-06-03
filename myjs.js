@@ -75,7 +75,7 @@ function confirmUpload() {
 	}, function() {
   		// Handle successful uploads on complete
   		// For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  		$(".upload-group")[0].before("Success!");
+  		$(".upload-group:first").before("Success!");
   		$(".upload-group").hide();
 
 	});
