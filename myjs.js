@@ -16,6 +16,7 @@ function signIn() {
 	  // The signed-in user info.
 	  user = result.user;
 	  showWelcomeContainer();
+	  sessionStorage.token = token;
 	  // ...
 	}).catch(function(error) {
 	  // Handle Errors here.

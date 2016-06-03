@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var user = firebase.auth().currentUser;
+	var user = sessionStorage.token;
 
 if (user) {
   // User is signed in.
