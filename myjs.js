@@ -1,9 +1,11 @@
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
+var selectedFile;
 
 
 $( document ).ready(function() {
 	$("#welcome").hide();
+	$(".upload-group").hide();
 	document.getElementById("upload").addEventListener('change', handleFileSelect, false);
 });
 
@@ -45,14 +47,21 @@ $(".dropdown").on("hide.bs.dropdown", function(event){
 });
 
 function handleFileSelect(event) {
-	var file = event.target.files[0];
+	$(".upload-group").show();
+	selectedFile = event.target.files[0];
+};
+
+function confirmUpload() {
 	var metadata = {
 		contentType: 'image',
 		customMetadata: {
-			'dogType': 'Lab'
-		}
+			'dogType': 'Lab',
+			'uploadedBy': user.uid,
+			'title': $("#imgTitle").html(),
+			'caption': $("#imgDesc").html()
+		},
 	};
-	var uploadTask = firebase.storage().ref().child('dogImages/' + file.name).put(file, metadata);
+	var uploadTask = firebase.storage().ref().child('dogImages/' + selectedFile.name).put(selectedFile, metadata);
 	// Register three observers:
 	// 1. 'state_changed' observer, called any time the state changes
 	// 2. Error observer, called on failure
@@ -68,6 +77,7 @@ function handleFileSelect(event) {
   		var downloadURL = uploadTask.snapshot.downloadURL;
 
 	});
-};
+
+}
 
 
