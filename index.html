@@ -59,7 +59,7 @@
         <h2 id="welcomeText"></h2>
         <img src="doge.jpg" class="mainDoge">
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="uploadDiv">
         <h2>Your favorite doge:</h2> <div class="dropdown favoriteDoge">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Floof
           <span class="caret"></span></button>
@@ -74,6 +74,13 @@
             <input type="file" id="upload" required/>
             <span>Select File</span>
           </label>
+          <div class="input-group upload-group">
+          <input type="text" placeholder="Image Title" id="imgTitle">
+          </div>
+          <div class="input-group upload-group">
+          <input type="text" placeholder="Image Caption" id="imgDesc">
+          </div>
+          <button type="button" class="btn btn-primary upload-group">SUBMIT</button>
       </div>
     </div>
   </div>
