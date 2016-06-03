@@ -38,6 +38,7 @@ function showWelcomeContainer() {
 
 $(".dropdown").on("hide.bs.dropdown", function(event){
     var text = $(event.relatedTarget).text(); // Get the text of the element
+    $(event.target).html(text+'<span class="caret"></span>');
     firebase.database().ref('Users/' + user.uid).set({
     	name: user.displayName,
     	email: user.email,
@@ -74,7 +75,8 @@ function confirmUpload() {
 	}, function() {
   		// Handle successful uploads on complete
   		// For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  		var downloadURL = uploadTask.snapshot.downloadURL;
+  		$(".upload-group").before("Success!");
+  		$(".upload-group").hide();
 
 	});
 
