@@ -1,3 +1,17 @@
 .mainDoge {
 	width: 40%;
 }
+
+#inputLabel {
+	overflow: hidden;
+	max-height: 40px;
+	background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%); 
+	padding: 10px 10px 10px 10px;
+	color: white;
+}
+
+#inputLabel > input {
+	position: fixed;
+	top: -1000px;
+}
+
