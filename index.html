@@ -70,17 +70,11 @@
           </ul>
         </div>
         <h2>Upload Doge</h2>
-          <label class="myLabel" id="inputLabel">
-            <input type="file" id="upload" required/>
-            <span>Select File</span>
-          </label>
-          <div class="input-group upload-group">
-          <input type="text" placeholder="Image Title" id="imgTitle">
-          </div>
-          <div class="input-group upload-group">
-          <input type="text" placeholder="Image Caption" id="imgDesc">
-          </div>
-          <button type="button" class="btn btn-primary upload-group" onclick="confirmUpload()">SUBMIT</button>
+        <label class="upload-group">
+          Upload File
+          <input type="file" class="upload-group" id="file">
+        </label>
+        <button type="button" class="btn btn-primary" id="uploadButton" onclick="uploadFile()">SUBMIT</button>
       </div>
     </div>
   </div>
