@@ -1,14 +1,22 @@
 $(document).ready(function(){
 	firebase.auth().onAuthStateChanged(function(user) {
-		var currentToken = sessionStorage.token;
-		var currentUser = firebase.auth().currentUser;
-  		if (currentUser && currentToken == currentUser.uid) {
-    		// User is signed in.
-    		  console.log(currentUser.displayName);
-
-  		} else {
-    		// No user is signed in.
-  		}
-	});
-
+    if (user) {
+      // User is signed in.
+      var token = firebase.auth().currentUser.uid;
+      queryDatabase(token);
+    } else {
+      // No user is signed in.
+      window.location = "index.html";
+    }
 });
+});
+
+
+function queryDatabase(token) {
+  firebase.database().ref('/Posts/').once('value').then(function(snapshot) {
+    var PostArray = snapshot.val();
+    console.log(PostArray);
+    // ...
+  });
+
+}
