@@ -34,7 +34,7 @@ function signIn() {
 function showWelcomeContainer() {
 	$("#login").hide();
 	$("#welcome").show();
-	$(".upload-group")/show();
+	$(".upload-group").show();
 	$("#welcomeText").html("Hello, " + user.displayName);
 };
 
