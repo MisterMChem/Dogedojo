@@ -72,7 +72,7 @@ function uploadFile() {
 	}, function() {
 	  // Handle successful uploads on complete
 	  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-	  var postKey = firebase.database.ref('Posts/').push().key;
+	  var postKey = firebase.database().ref('Posts/').push().key;
 	  var downloadURL = uploadTask.snapshot.downloadURL;
 	  var updates = {};
 	  var postData = {
