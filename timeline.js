@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	firebase.auth().onAuthStateChanged(function(user) {
 		var currentToken = sessionStorage.token;
-		var currentUser = user.currentUser;
-  		if (currentUser && currentToken == user.uid) {
+		var currentUser = firebase.auth().currentUser;
+  		if (currentUser && currentToken == currentUser.uid) {
     		// User is signed in.
-    		  console.log(user.displayName);
+    		  console.log(currentUser.displayName);
 
   		} else {
     		// No user is signed in.
