@@ -7,7 +7,6 @@ $( document ).ready(function() {
 	$("#welcome").hide();
 	$("#uploadButton").hide();
 	$(".upload-group").hide();
-	document.getElementById("upload").addEventListener('change', handleFileSelect, false);
 });
 
 function signIn() {
