@@ -1,13 +1,14 @@
 $(document).ready(function(){
-	var user = sessionStorage.token;
-	var currentUser = firebase.auth().currentUser;
+	firebase.auth().onAuthStateChanged(function(user) {
+		var currentToken = sessionStorage.token;
+		var currentUser = user.currentUser;
+  		if (currentUser && currentToken = user.uid) {
+    		// User is signed in.
+    		  console.log(user.displayName);
 
-if (currentUser && currentUser.uid == user) {
-  // User is signed in.
-  console.log(user.displayName);
-} else {
-  // No user is signed in.
-  window.location = "index.html";
-}
+  		} else {
+    		// No user is signed in.
+  		}
+	});
 
 });
